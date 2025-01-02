@@ -13,6 +13,24 @@
         android:theme="@style/Theme.RuletaDeLaSuerte"
         tools:targetApi="31">
         <activity
+            android:name=".ejemplo"
+            android:exported="false" />
+        <activity
+            android:name=".TalkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlayerSelect"
+            android:exported="false" />
+        <activity
+            android:name=".MultiGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinalGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EndActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
