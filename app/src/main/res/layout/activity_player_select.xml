@@ -7,4 +7,163 @@
     android:layout_height="match_parent"
     tools:context=".PlayerSelect">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Personaliza el personaje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:contentDescription="Imagen presentación con animación y fondo con luz del color selccionado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="76dp"
+        android:contentDescription="Primera opción"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Segunda opción"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Tercera opción"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="HardcodedText" />
+
+    <RadioGroup
+        android:id="@+id/genderGroup"
+        android:layout_width="175dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <RadioButton
+            android:id="@+id/man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/woman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Mujer" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/nameGroup"
+        android:layout_width="186dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderGroup">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:" />
+
+        <TextView
+            android:id="@+id/nameIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Introduce tu nombre" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/colorSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Selecciona un color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="137dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorSelection">
+
+        <RadioButton
+            android:id="@+id/red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:width="1dp"
+            android:text="Rojo" />
+
+        <RadioButton
+            android:id="@+id/blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Azul" />
+
+        <RadioButton
+            android:id="@+id/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amarillo" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
