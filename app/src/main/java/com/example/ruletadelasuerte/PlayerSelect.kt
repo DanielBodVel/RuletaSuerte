@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 class PlayerSelect : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +21,22 @@ class PlayerSelect : AppCompatActivity() {
             insets
         }
 
-        findViewById<Button>(R.id.next)?.setOnClickListener{
-            val intent = Intent(this, TalkActivity::class.java)
-            startActivity(intent)
+        val playerName = findViewById<TextInputEditText>(R.id.nameIn)
+
+        findViewById<Button>(R.id.next)?.setOnClickListener {
+            val playerInputName = playerName.text.toString().trim()
+            if (playerInputName.isEmpty()) {
+                AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("¡No hay ningún nombre!")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .show()
+            } else {
+                val intent = Intent(this, TalkActivity::class.java)
+                intent.putExtra("PlayerName", playerInputName)
+                //intent.putExtra("PlayerColor")
+                startActivity(intent)
+            }
         }
     }
 }
